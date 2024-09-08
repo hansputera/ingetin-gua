@@ -1,14 +1,17 @@
 {
-  "name": "project-name-here",
+  "name": "ingetin-gua",
   "version": "0.0.1",
-  "description": "project description here",
+  "description": "bot-wa-ingetin-gua",
   "main": "./dist/index.js",
   "scripts": {
     "prepare": "node preinstall.js --max-old-space-size=10M",
     "lint": "biome lint --write ./src",
     "format": "biome format --write ./src",
     "build": "tsup",
-    "hook": "node hook.js --max-old-space-size=50M"
+    "hook": "node hook.js --max-old-space-size=50M",
+    "serve": "dotenvx run -- node dist/index.js",
+    "drizzle:migrate": "dotenvx run -- node dist/migrate.js",
+    "drizzle:generate": "dotenvx run -- drizzle-kit generate"
   },
   "type": "module",
   "keywords": [
@@ -22,11 +25,21 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@swc/core": "^1.7.23",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
     "@types/node": "^20.16.5",
+    "drizzle-kit": "^0.24.2",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
     "is-git-dirty": "^2.0.2",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.14.0",
+    "cors": "^2.8.5",
+    "drizzle-orm": "^0.33.0",
+    "express": "next",
+    "mysql2": "^3.11.0"
   }
 }

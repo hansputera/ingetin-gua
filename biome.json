@@ -48,7 +48,6 @@
 			"performance": {
 				"noDelete": "error",
 				"noReExportAll": "error",
-				"noBarrelFile": "error",
 				"noAccumulatingSpread": "info"
 			},
 			"style": {
@@ -76,7 +75,8 @@
 			"enabled": true,
 			"trailingCommas": "all",
 			"semicolons": "always",
-			"indentWidth": 4
+			"indentWidth": 4,
+			"quoteProperties": "preserve"
 		}
 	}
 }
